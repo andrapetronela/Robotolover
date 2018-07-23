@@ -12,7 +12,7 @@ h2 {
     letter-spacing: 5px;
     font-size: 1em;
     text-align: center;
-    padding-top: 1rem;   
+    padding-top: 1.5rem;   
 }
 .frame {
     height: 80vh;
@@ -21,6 +21,8 @@ h2 {
     background-color: #333;
     position: relative;
     border-radius: 5px;
+    outline: 2px solid #fff;
+    outline-offset: -1rem;
 }
 
 .robot {
@@ -67,6 +69,7 @@ h2 {
     border-radius: 50%;
     z-index: 200;
     transition: all .4s;
+    animation: eyes 10s infinite ease-in-out;
 }
 .eye:after {
     content:"";
@@ -79,6 +82,15 @@ h2 {
     top: 7px;
     left: 5px;
     transition: all .4s;
+}
+
+@keyframes eyes {
+    0%, 23%, 25%, 65%, 67%, 89%, 91%, 100%  {
+        transform: scaleY(1);
+    }
+    24%, 66%, 90% {
+        transform: scaleY(0);
+    }
 }
 .l-eye {
     position: absolute;
@@ -226,6 +238,7 @@ h2 {
 
 .frame:hover .eye, .eye::after {
     transform: scale(1.9);
+    animation: none;
 }
 
 .frame:hover .eye::after {
@@ -240,11 +253,11 @@ h2 {
 }
 
 @keyframes jump {
-    0% { transform: translateY(-1rem) translateX(-4rem);}
-    20% { transform: translateY(-2.5rem) translateX(-8rem);}
-    40% { transform: translateY(-3) translateX(-12rem);}
-    50% { transform: translateY(-5.5rem) translateX(-16rem);}
-    55% { transform: translateY(-6.5rem) translateX(-20rem);}
-    60%, 70%, 90%, 100% { transform: rotate(90deg) ;}
+    0% { transform: translate(-4rem, -1rem);}
+    20% { transform: translate(-8rem, -2rem);}
+    40% { transform: translate(-12rem, -3rem);}
+    50% { transform: translate(-16rem, -4rem);}
+    55% { transform: translate(-20rem, -5rem);}
+    60%, 70%, 90%, 100% { transform: translate(-14rem, 0) rotate(90deg);}
 }
 
