@@ -8,10 +8,9 @@ body {
 }
 h2 {
     color: #fff;
-    text-transform: uppercase;
-    font-family: sans-serif;
+    font-family: Merienda;
     letter-spacing: 5px;
-    font-size: 1.5em;
+    font-size: 1em;
     text-align: center;
     padding-top: 1rem;   
 }
@@ -201,7 +200,7 @@ h2 {
     transition: all .4s;
 }
 .frame:hover .l-hand-2 {
-    animation: second-hand .6s infinite ease alternate;
+    animation: second-hand .1s infinite ease alternate;
 
 }
 .frame:hover .r-leg {
@@ -212,8 +211,10 @@ h2 {
 }
 
 .frame:hover .robot {
-    transform: translateY(-1rem) translateX(-.5rem);
+    animation: jump 4s linear infinite ; 
+    
 }
+
 .frame:hover .mouth {
     margin-top: .8rem;
     height: 1.5rem;
@@ -236,5 +237,13 @@ h2 {
 }
 .frame:hover .head, .frame:hover .wire {
     background-color: #ec407a;
+}
+
+@keyframes jump {
+    0%, 100% { transform: translateY(-1rem) translateX(-2rem);}
+    20%, 80% { transform: translateY(-1.5rem) translateX(-3rem);}
+    40% { transform: translateY(-2) translateX(-4rem);}
+    60% { transform: translateY(-2.5rem) translateX(-5rem);}
+   /* 80% { transform: translateY(-3.5rem) translateX(-.7rem);}*/
 }
 
