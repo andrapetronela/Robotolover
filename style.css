@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #fff;
+}
+h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    letter-spacing: 5px;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 1rem;   
+}
+.frame {
+    height: 80vh;
+    width: 60vw;
+    margin: 10vh auto;
+    background-color: #333;
+    position: relative;
+    border-radius: 5px;
+}
+
+.robot {
+    margin: 15vh auto 0 auto;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transition: all .4s;
+}
+.head {
+    height: 4rem;
+    width: 7rem;
+    background-color: #5d99c6;
+    margin: 10vh auto 5px auto;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    position: relative;
+    transition: all 1s;
+}
+.mouth {
+    height: 2rem;
+    width: 7rem;
+    background-color: #5d99c6;
+    margin: .5vh auto 5px auto;
+    border-radius: 0 0 50% 50%;
+    transition: all .4s;
+    position: relative;
+}
+.tongue {
+    height: 1rem;
+    width: 1rem;
+    background-color: #f06292;
+    border-radius: 3px 3px 10px 10px;
+    position: absolute;
+    left: 40%;
+    transform: scale(0);
+    transition: all .1s;
+}
+
+.eye {
+    height: 1rem;
+    width: 1rem;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 200;
+    transition: all .4s;
+}
+.eye:after {
+    content:"";
+    height: 3px;
+    width: 3px;
+    background-color: #000;
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    top: 7px;
+    left: 5px;
+    transition: all .4s;
+}
+.l-eye {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+.r-eye {
+    position: absolute;
+    top: 2rem;
+    left: 4rem;
+}
+.wire {
+    height: 3rem;
+    width: .2rem;
+    background-color: #5d99c6;
+    position: absolute;
+    top: -1rem;
+    transition: all 1s;
+}
+.l-wire {
+    left: 2rem;
+    transform: skewX(20deg);
+}
+.r-wire {
+    left: 5rem;
+    transform: skewX(-20deg);
+}
+.body {
+    height: 20vh;
+    width: 5rem;
+    background-color: #5d99c6;
+    margin: 0 auto;
+    border-radius: 8px;
+    z-index: 5555;
+    position: relative;
+}
+#heart {
+    color: #c60055;
+    position: absolute;
+    top: 2.5rem;
+    left: 3rem;
+    opacity: 0;
+    animation: pulse .2s infinite alternate;
+    transition: all .4s;
+}
+.frame:hover #heart {
+    opacity: 1;
+}
+@keyframes pulse {
+    0% { transform: scale(1.1);}
+    100% { transform: scale(1.9);}
+}					
+.hand {
+    height: 4rem;
+    width: 1.2rem;
+    background-color: #5d99c6;
+    border-radius: 7px;
+    position: absolute;
+    top: 6.5rem;
+    transition: all .4s;
+    z-index: 20;
+}
+.l-hand {
+    left: 6rem;
+    transform: rotate(30deg);
+}
+.l-hand-2 {
+    height: 2.9rem;
+    width: 1.1rem;
+    background-color: #5d99c6;
+    border-radius: 10px;
+    position: absolute;
+    top: 1.95rem;
+    left: -.8rem;
+    transform: rotate(100deg);
+    transition: all .3s;
+}
+@keyframes second-hand {
+    0% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(115deg);
+    }
+    100% {transform: rotate(120deg);}
+}
+.r-hand {
+    left: 11.5rem;
+    top: 6.55rem;
+    transform: rotate(-25deg);
+}
+.r-hand-2 {
+    height: 2.9rem;
+    width: 1.2rem;
+    background-color: #5d99c6;
+    border-radius: 10px;
+    position: absolute;
+    top: 3rem;
+}
+/*
+.frame:hover .l-hand {
+    transform: skewX(17deg);
+}
+*/
+.leg {
+    height: 3rem;
+    width: 1rem;
+    background-color: #5d99c6;
+    border-radius: 10px;
+    position: absolute;
+    top: 14rem;
+}
+.l-leg {
+    left: 8rem;
+    transition: all .4s;
+}
+.r-leg {
+    left: 51.5%;
+    transition: all .4s;
+}
+.frame:hover .l-hand-2 {
+    animation: second-hand .6s infinite ease alternate;
+
+}
+.frame:hover .r-leg {
+    transform: rotate(-30deg);
+}
+.frame:hover .l-leg {
+    transform: rotate(-30deg);
+}
+
+.frame:hover .robot {
+    transform: translateY(-1rem) translateX(-.5rem);
+}
+.frame:hover .mouth {
+    margin-top: .8rem;
+    height: 1.5rem;
+    width: 6.7rem;
+}
+.frame:hover .tongue {
+    transform: scale(1);
+}
+
+.frame:hover .eye, .eye::after {
+    transform: scale(1.9);
+}
+
+.frame:hover .eye::after {
+    transform: translateX(-.2rem);
+}
+
+.frame:hover .wire {
+    top: -2rem;
+}
+.frame:hover .head, .frame:hover .wire {
+    background-color: #ec407a;
+}
+
