@@ -22,7 +22,8 @@ h2 {
     position: relative;
     border-radius: 5px;
     outline: 2px solid #fff;
-    outline-offset: -1rem;
+    outline-offset: -1rem; 
+    position: relative;
 }
 
 .robot {
@@ -32,6 +33,16 @@ h2 {
     height: 300px;
     transition: all .4s;
 }
+
+@media only screen and (min-width: 900px) {
+    .frame {
+        width: 90vw;
+    }
+    .robot {
+        margin: 50% auto;
+    }
+}
+
 .head {
     height: 4rem;
     width: 7rem;
